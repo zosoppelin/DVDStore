@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-12-2012 01:06:06 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="sakila" name="cl.rramirez.dvdstore.datos.hibernate.maps.Language" table="language">
+    <id name="languageId" type="java.lang.Byte">
+      <column name="language_id"/>
+      <generator class="identity"/>
+    </id>
+    <property name="name" type="string">
+      <column length="20" name="name" not-null="true"/>
+    </property>
+    <property name="lastUpdate" type="timestamp">
+      <column length="19" name="last_update" not-null="true"/>
+    </property>
+    <set inverse="true" name="filmsForOriginalLanguageId">
+      <key>
+        <column name="original_language_id"/>
+      </key>
+      <one-to-many class="cl.rramirez.dvdstore.datos.hibernate.maps.Film"/>
+    </set>
+    <set inverse="true" name="filmsForLanguageId">
+      <key>
+        <column name="language_id" not-null="true"/>
+      </key>
+      <one-to-many class="cl.rramirez.dvdstore.datos.hibernate.maps.Film"/>
+    </set>
+  </class>
+</hibernate-mapping>

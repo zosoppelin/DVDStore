@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-12-2012 01:06:06 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="sakila" name="cl.rramirez.dvdstore.datos.hibernate.maps.Store" table="store">
+    <id name="storeId" type="java.lang.Byte">
+      <column name="store_id"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="cl.rramirez.dvdstore.datos.hibernate.maps.Staff" fetch="select" name="staff">
+      <column name="manager_staff_id" not-null="true" unique="true"/>
+    </many-to-one>
+    <many-to-one class="cl.rramirez.dvdstore.datos.hibernate.maps.Address" fetch="select" name="address">
+      <column name="address_id" not-null="true"/>
+    </many-to-one>
+    <property name="lastUpdate" type="timestamp">
+      <column length="19" name="last_update" not-null="true"/>
+    </property>
+    <set inverse="true" name="inventories">
+      <key>
+        <column name="store_id" not-null="true"/>
+      </key>
+      <one-to-many class="cl.rramirez.dvdstore.datos.hibernate.maps.Inventory"/>
+    </set>
+    <set inverse="true" name="customers">
+      <key>
+        <column name="store_id" not-null="true"/>
+      </key>
+      <one-to-many class="cl.rramirez.dvdstore.datos.hibernate.maps.Customer"/>
+    </set>
+    <set inverse="true" name="staffs">
+      <key>
+        <column name="store_id" not-null="true"/>
+      </key>
+      <one-to-many class="cl.rramirez.dvdstore.datos.hibernate.maps.Staff"/>
+    </set>
+  </class>
+</hibernate-mapping>

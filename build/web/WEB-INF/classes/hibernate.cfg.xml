@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sakila</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">qwerty</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <mapping resource="cl/rramirez/dvdstore/maps/Film.hbm.xml"/>
+    <mapping resource="cl/rramirez/dvdstore/maps/Country.hbm.xml"/>
+    <mapping resource="cl/rramirez/dvdstore/datos/hibernate/maps/FilmActor.hbm.xml"/>
+    <mapping resource="cl/rramirez/dvdstore/datos/hibernate/maps/Staff.hbm.xml"/>
+    <mapping resource="cl/rramirez/dvdstore/datos/hibernate/maps/Film.hbm.xml"/>
+    <mapping resource="cl/rramirez/dvdstore/datos/hibernate/maps/Customer.hbm.xml"/>
+    <mapping resource="cl/rramirez/dvdstore/datos/hibernate/maps/FilmCategory.hbm.xml"/>
+    <mapping resource="cl/rramirez/dvdstore/datos/hibernate/maps/Rental.hbm.xml"/>
+    <mapping resource="cl/rramirez/dvdstore/datos/hibernate/maps/Actor.hbm.xml"/>
+    <mapping resource="cl/rramirez/dvdstore/datos/hibernate/maps/Store.hbm.xml"/>
+    <mapping resource="cl/rramirez/dvdstore/datos/hibernate/maps/City.hbm.xml"/>
+    <mapping resource="cl/rramirez/dvdstore/datos/hibernate/maps/Inventory.hbm.xml"/>
+    <mapping resource="cl/rramirez/dvdstore/datos/hibernate/maps/FilmText.hbm.xml"/>
+    <mapping resource="cl/rramirez/dvdstore/datos/hibernate/maps/Language.hbm.xml"/>
+    <mapping resource="cl/rramirez/dvdstore/datos/hibernate/maps/Category.hbm.xml"/>
+    <mapping resource="cl/rramirez/dvdstore/datos/hibernate/maps/Address.hbm.xml"/>
+    <mapping resource="cl/rramirez/dvdstore/datos/hibernate/maps/Payment.hbm.xml"/>
+    <mapping resource="cl/rramirez/dvdstore/datos/hibernate/maps/Country.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

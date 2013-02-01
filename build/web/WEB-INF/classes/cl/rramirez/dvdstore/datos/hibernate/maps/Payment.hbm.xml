@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-12-2012 01:06:06 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="sakila" name="cl.rramirez.dvdstore.datos.hibernate.maps.Payment" table="payment">
+    <id name="paymentId" type="java.lang.Short">
+      <column name="payment_id"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="cl.rramirez.dvdstore.datos.hibernate.maps.Staff" fetch="select" name="staff">
+      <column name="staff_id" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="cl.rramirez.dvdstore.datos.hibernate.maps.Customer" fetch="select" name="customer">
+      <column name="customer_id" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="cl.rramirez.dvdstore.datos.hibernate.maps.Rental" fetch="select" name="rental">
+      <column name="rental_id"/>
+    </many-to-one>
+    <property name="amount" type="big_decimal">
+      <column name="amount" not-null="true" precision="5"/>
+    </property>
+    <property name="paymentDate" type="timestamp">
+      <column length="19" name="payment_date" not-null="true"/>
+    </property>
+    <property name="lastUpdate" type="timestamp">
+      <column length="19" name="last_update" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>
