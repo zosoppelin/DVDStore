@@ -20,6 +20,7 @@
             </div>
         </logic:notPresent>
         
+        <h1>Esto es un ejemplo usando hibernate, patrones: dao, abstract factory, business object, struts</h1>
         <h3><bean:message key="welcome.heading"/></h3>
         <p><bean:message key="welcome.message"/></p>
         
