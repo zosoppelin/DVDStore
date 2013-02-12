@@ -4,6 +4,7 @@
  */
 package cl.rramirez.dvdstore.business.bo;
 
+import cl.rramirez.dvdstore.datos.hibernate.maps.Actor;
 import java.util.LinkedHashMap;
 
 /**
@@ -12,4 +13,5 @@ import java.util.LinkedHashMap;
  */
 public interface ActorBO {
     public LinkedHashMap<Integer, String> getActorsMap();
+    public Actor[] getActores();
 }

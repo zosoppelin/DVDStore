@@ -7,18 +7,23 @@
 
 <struts-config>
     <form-beans>
-    
+        <form-bean name="Actor" type="org.apache.struts.action.DynaActionForm">
+            <form-property name="name" type="java.lang.String"/>
+        </form-bean>
     </form-beans>
     
     <global-exceptions>
     
     </global-exceptions>
 
-    <global-forwards>
+    <global-forwards> 
         <forward name="welcome"  path="/Welcome.do"/>
     </global-forwards>
 
     <action-mappings>
+        <action path="/actor" type="cl.rramirez.dvdstore.presentacion.action.AdmActorAction" scope="session" name="Actor" parameter="method">
+            <forward name="lista_actores" path="/adm/actor.jsp" />
+        </action>
         <action path="/Welcome" forward="/welcomeStruts.jsp"/>
     </action-mappings>
     

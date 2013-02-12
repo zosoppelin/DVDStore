@@ -67,6 +67,7 @@ public abstract class HibernateGenericDAOImpl<T, ID extends Serializable> implem
     @Override
     public List findAll(Class clazz) {
         Session hibernateSession = this.getSession();
+        hibernateSession.beginTransaction();
         List T = null;
         Query query = hibernateSession.createQuery("from " + clazz.getName());
         T = query.list();

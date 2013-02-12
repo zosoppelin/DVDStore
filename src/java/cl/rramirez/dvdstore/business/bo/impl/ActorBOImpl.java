@@ -39,5 +39,23 @@ public class ActorBOImpl implements ActorBO{
 
         return mapaActores;
     }
+    
+    @Override
+    public Actor[] getActores() {
+        
+        // llamo al factory de daos y le pido un hibernate dao, lo idea aqui es obtener el factory de un archivo de configuracion, 
+        // de esta manera queda transparente para el cliente BO y puedo conmutar de implementaciones solo editando el archivo config
+        DAOFactory myDao = DAOFactory.getDAOFactory(DAOFactory.HIBERNATE);
+        
+        // obtengo un actor dao que me entrega hibernateDao
+        ActorDAO actorDao = myDao.getActorDAO();
+        
+        // obtengo el listado de actores de la base de datos
+        List<Actor> actoresList = actorDao.findAll(Actor.class);
+        
+        Actor[] actores = (Actor[])actoresList.toArray(new Actor[actoresList.size()]);
+        
+        return actores;
+    }
 
 }

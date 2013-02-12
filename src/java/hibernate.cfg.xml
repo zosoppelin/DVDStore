@@ -9,8 +9,6 @@
     <property name="hibernate.connection.password">qwerty</property>
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.current_session_context_class">thread</property>
-    <mapping resource="cl/rramirez/dvdstore/maps/Film.hbm.xml"/>
-    <mapping resource="cl/rramirez/dvdstore/maps/Country.hbm.xml"/>
     <mapping resource="cl/rramirez/dvdstore/datos/hibernate/maps/FilmActor.hbm.xml"/>
     <mapping resource="cl/rramirez/dvdstore/datos/hibernate/maps/Staff.hbm.xml"/>
     <mapping resource="cl/rramirez/dvdstore/datos/hibernate/maps/Film.hbm.xml"/>
