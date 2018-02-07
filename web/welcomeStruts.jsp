@@ -11,6 +11,7 @@
         <title><bean:message key="welcome.title"/></title>
         <html:base/>
     </head>
+    <h1>Hola</h1>
     <body style="background-color: white">
         
         <logic:notPresent name="org.apache.struts.action.MESSAGE" scope="application">
